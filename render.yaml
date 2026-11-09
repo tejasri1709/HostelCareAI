@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: hostel-care-ai-demo
+    runtime: python
+    rootDir: hostel_care_ai_website
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    plan: free
+    envVars:
+      - key: HOSTEL_CARE_SECRET
+        generateValue: true
